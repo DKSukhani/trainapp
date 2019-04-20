@@ -20,3 +20,13 @@ class Train(models.Model):
 
     def __str__(self):
         return f"{self.origin} to {self.destination} in {self.duration} mins"
+
+
+class Passenger(models.Model):
+    fname = models.CharField(max_length=64)
+    lname = models.CharField(max_length=64)
+    trains = models.ManyToManyField(
+        Train, blank=True, related_name="passengers")
+
+    def __str__(self):
+        return f"{self.fname} {self.lname}"

@@ -6,3 +6,4 @@ from . import models
 
 admin.site.register(models.Train)
 admin.site.register(models.Station)
+admin.site.register(models.Passenger)

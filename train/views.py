@@ -18,11 +18,9 @@ def index(request):
 def train_id(request, train_id):
     try:
         train = Train.objects.get(id=train_id)
-        train_id = train_id
     except Train.DoesNotExist:
         raise Http404("Train does not exist")
     context = {
         "train": train,
-        "train_id": train_id
     }
     return render(request, "train/train_id.html", context)
