@@ -11,6 +11,19 @@
     <li>Time consumed is {{ train.duration }}</li>
 </ul>
 
+<h2>Passengers</h2>
+<ul>
+    {% for passenger in passengers %}
+    <li>
+        {{ passenger }}
+    </li>
+    {% empty %}
+    No passengers found.
+
+    {% endfor %}
+</ul>
+
+
 <a href="{% url 'index' %}">Take me back to the home page</a>
 
 {% endblock %}

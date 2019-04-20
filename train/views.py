@@ -22,5 +22,6 @@ def train_id(request, train_id):
         raise Http404("Train does not exist")
     context = {
         "train": train,
+        "passengers": train.passengers.all()
     }
     return render(request, "train/train_id.html", context)
