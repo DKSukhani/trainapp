@@ -1,0 +1,16 @@
+{% extends "train/base.html" %}
+
+{% block body %}
+<h1>
+    Train {{ train.id }}
+</h1>
+
+<ul>
+    <li>Origin is {{ train.origin }}</li>
+    <li>Destination is {{ train.destination }}</li>
+    <li>Time consumed is {{ train.duration }}</li>
+</ul>
+
+<a href="{% url 'index' %}">Take me back to the home page</a>
+
+{% endblock %}
